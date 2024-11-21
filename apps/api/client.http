@@ -9,3 +9,14 @@ Content-Type: application/json
   "email": "gabriel@example.com",
   "password": "123456"
 }
+
+###
+
+# @name authenticate_with_password
+POST {{baseUrl}}/sessions/password
+Content-Type: application/json
+
+{
+  "email": "gabriel@example.com",
+  "password": "123456"
+}
