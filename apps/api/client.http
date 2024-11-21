@@ -28,3 +28,13 @@ Content-Type: application/json
 GET {{baseUrl}}/profile
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name request_password_recover
+POST {{baseUrl}}/password/recover
+Content-Type: application/json
+
+{
+  "email": "gabriel@example.com"
+}
