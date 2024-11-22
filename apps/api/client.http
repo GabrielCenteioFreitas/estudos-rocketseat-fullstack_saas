@@ -38,3 +38,14 @@ Content-Type: application/json
 {
   "email": "gabriel@example.com"
 }
+
+###
+
+# @name reset_password
+POST {{baseUrl}}/password/reset
+Content-Type: application/json
+
+{
+  "code": "c3c218a9-de69-4f9e-a485-a2f00bc8b2cf",
+  "password": "123456"
+}
