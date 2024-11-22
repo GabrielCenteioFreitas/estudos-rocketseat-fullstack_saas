@@ -69,3 +69,10 @@ Authorization: Bearer {{authToken}}
 GET {{baseUrl}}/organizations/organization-01/membership
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name get_organization
+GET {{baseUrl}}/organizations/organization-01
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
