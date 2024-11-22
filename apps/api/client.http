@@ -62,3 +62,10 @@ Authorization: Bearer {{authToken}}
   "domain": "organization01.com",
   "shouldAttachUsersByDomain": true
 }
+
+###
+
+# @name get_membership
+GET {{baseUrl}}/organizations/organization-01/membership
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
