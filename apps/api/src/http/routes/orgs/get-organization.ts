@@ -23,14 +23,14 @@ export async function getOrganization(app: FastifyInstance) {
             200: z.object({
               organization: z.object({
                 name: z.string(),
-                id: z.string(),
+                id: z.string().uuid(),
                 slug: z.string(),
                 domain: z.string().nullable(),
                 shouldAttachUsersByDomain: z.boolean(),
                 avatarUrl: z.string().url().nullable(),
                 createdAt: z.date(),
                 updatedAt: z.date(),
-                ownerId: z.string(),
+                ownerId: z.string().uuid(),
               }),
             }),
           },
