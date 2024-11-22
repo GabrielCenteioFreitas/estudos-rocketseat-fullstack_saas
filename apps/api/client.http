@@ -49,3 +49,16 @@ Content-Type: application/json
   "code": "c3c218a9-de69-4f9e-a485-a2f00bc8b2cf",
   "password": "123456"
 }
+
+###
+
+# @name create_organization
+POST {{baseUrl}}/organizations
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Organization 01",
+  "domain": "organization01.com",
+  "shouldAttachUsersByDomain": true
+}
