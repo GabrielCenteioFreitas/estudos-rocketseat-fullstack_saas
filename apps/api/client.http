@@ -57,14 +57,9 @@ POST {{baseUrl}}/organizations
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
-# {
-#   "name": "Organization 01",
-#   "domain": "organization01.com",
-#   "shouldAttachUsersByDomain": true
-# }
 {
-  "name": "Organization To Be Deleted",
-  "domain": "organization-to-be-deleted.com",
+  "name": "Organization 01",
+  "domain": "organization01.com",
   "shouldAttachUsersByDomain": true
 }
 
@@ -107,3 +102,14 @@ Authorization: Bearer {{authToken}}
 # @name shutdown_organization
 DELETE {{baseUrl}}/organizations/organization-to-be-deleted
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name transfer_organization
+PATCH {{baseUrl}}/organizations/organization-01
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "transferToUserId": "user-id"
+}
