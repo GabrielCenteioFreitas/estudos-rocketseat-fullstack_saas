@@ -155,3 +155,9 @@ Authorization: Bearer {{authToken}}
   "name": "Project 01 Updated",
   "description": "Project 01 Description"
 }
+
+###
+
+# @name get_members
+GET {{baseUrl}}/organizations/organization-01/members
+Authorization: Bearer {{authToken}}
