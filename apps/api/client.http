@@ -161,3 +161,14 @@ Authorization: Bearer {{authToken}}
 # @name get_members
 GET {{baseUrl}}/organizations/organization-01/members
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name update_member
+PUT {{baseUrl}}/organizations/organization-01/members/user-id
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "role": "ADMIN"
+}
