@@ -131,3 +131,9 @@ Authorization: Bearer {{authToken}}
 # @name delete_project
 DELETE {{baseUrl}}/organizations/organization-01/projects/project-to-be-deleted-id
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name get_project
+GET {{baseUrl}}/organizations/organization-01/projects/project-01
+Authorization: Bearer {{authToken}}

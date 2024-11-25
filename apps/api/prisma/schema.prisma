@@ -117,7 +117,7 @@ model Organization {
 model Project {
   id          String   @id @default(uuid())
   name        String
-  slug        String
+  slug        String   @unique
   description String
   avatarUrl   String?  @map("avatar_url")
   createdAt   DateTime @default(now()) @map("created_at")
