@@ -10,17 +10,21 @@ import { getUserPermissions } from '@/utils/get-user-permissions'
 import { BadRequestError } from '../_errors/bad-request-error'
 import { UnauthorizedError } from '../_errors/unauthorized-error'
 
-export async function deleteProject(app: FastifyInstance) {
+export async function updateProject(app: FastifyInstance) {
   app
     .withTypeProvider<ZodTypeProvider>()
     .register(auth)
-    .delete(
+    .put(
       '/organizations/:orgSlug/projects/:projectSlug',
       {
         schema: {
           tags: ['projects'],
-          summary: 'Create a new project',
+          summary: 'Update a project',
           security: [{ bearerAuth: [] }],
+          body: z.object({
+            name: z.string(),
+            description: z.string(),
+          }),
           params: z.object({
             orgSlug: z.string(),
             projectSlug: z.string(),
@@ -49,6 +53,7 @@ export async function deleteProject(app: FastifyInstance) {
           throw new Error('User not found.')
         }
 
+        const { description, name } = req.body
         const { orgSlug, projectSlug } = req.params
         const { membership, organization } =
           await req.getUserMembership(orgSlug)
@@ -65,17 +70,23 @@ export async function deleteProject(app: FastifyInstance) {
         }
 
         const authProject = projectSchema.parse(project)
+
         const { cannot } = getUserPermissions(userId, membership.role)
 
-        if (cannot('delete', authProject)) {
+        if (cannot('update', authProject)) {
           throw new UnauthorizedError(
-            'You are not allowed to delete this project.',
+            'You are not allowed to see this project.',
           )
         }
 
-        await prisma.project.delete({
+        await prisma.project.update({
+          data: {
+            name,
+            description,
+          },
           where: {
             slug: projectSlug,
+            organizationId: organization.id,
           },
         })
 

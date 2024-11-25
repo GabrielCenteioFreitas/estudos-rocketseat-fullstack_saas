@@ -143,3 +143,15 @@ Authorization: Bearer {{authToken}}
 # @name get_projects
 GET {{baseUrl}}/organizations/organization-01/projects
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name update_project
+PUT {{baseUrl}}/organizations/organization-01/projects/project-01
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Project 01 Updated",
+  "description": "Project 01 Description"
+}
