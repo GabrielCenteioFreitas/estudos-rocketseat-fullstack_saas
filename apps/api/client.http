@@ -125,3 +125,9 @@ Authorization: Bearer {{authToken}}
   "name": "Project 01",
   "description": "Project 01 Description"  
 }
+
+###
+
+# @name delete_project
+DELETE {{baseUrl}}/organizations/organization-01/projects/project-to-be-deleted-id
+Authorization: Bearer {{authToken}}
