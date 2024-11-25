@@ -187,6 +187,12 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "email": "new-member@example.com",
+  "email": "new-member-01@example.com",
   "role": "ADMIN"
 }
+
+###
+
+# @name get_invite
+GET {{baseUrl}}/invites/b57ab849-2bbb-4a26-8337-d6e86fee304b
+Authorization: Bearer {{authToken}}
