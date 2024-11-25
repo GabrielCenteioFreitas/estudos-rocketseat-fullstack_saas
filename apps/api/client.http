@@ -172,3 +172,9 @@ Authorization: Bearer {{authToken}}
 {
   "role": "ADMIN"
 }
+
+###
+
+# @name remove_member
+DELETE {{baseUrl}}/organizations/organization-01/members/user-id-to-be-removed
+Authorization: Bearer {{authToken}}
