@@ -83,3 +83,16 @@ Authorization: Bearer {{authToken}}
 GET {{baseUrl}}/organizations
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name update_organization
+PUT {{baseUrl}}/organizations/organization-01
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Organization 01",
+  "domain": "organization01.com",
+  "shouldAttachUsersByDomain": true
+}
