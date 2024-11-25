@@ -207,3 +207,9 @@ Authorization: Bearer {{authToken}}
 # @name accept_invite
 POST {{baseUrl}}/invites/caa4dc21-78ba-4e6d-babf-f905c98af96b/accept
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name reject_invite
+POST {{baseUrl}}/invites/caa4dc21-78ba-4e6d-babf-f905c98af96b/reject
+Authorization: Bearer {{authToken}}
