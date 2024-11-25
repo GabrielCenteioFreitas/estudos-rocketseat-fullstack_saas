@@ -187,7 +187,7 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "email": "new-member-01@example.com",
+  "email": "new-member-02@example.com",
   "role": "ADMIN"
 }
 
@@ -200,4 +200,10 @@ GET {{baseUrl}}/invites/b57ab849-2bbb-4a26-8337-d6e86fee304b
 
 # @name get_invites
 GET {{baseUrl}}/organizations/organization-01/invites
+Authorization: Bearer {{authToken}}
+
+###
+
+# @name accept_invite
+POST {{baseUrl}}/invites/caa4dc21-78ba-4e6d-babf-f905c98af96b/accept
 Authorization: Bearer {{authToken}}
