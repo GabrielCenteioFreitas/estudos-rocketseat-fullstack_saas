@@ -225,3 +225,9 @@ Authorization: Bearer {{authToken}}
 # @name get_pending_invites
 GET {{baseUrl}}/pending-invites
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name get_organization_billing
+GET {{baseUrl}}/organizations/organization-01/billing
+Authorization: Bearer {{authToken}}
