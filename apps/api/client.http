@@ -178,3 +178,15 @@ Authorization: Bearer {{authToken}}
 # @name remove_member
 DELETE {{baseUrl}}/organizations/organization-01/members/user-id-to-be-removed
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name create_invite
+POST {{baseUrl}}/organizations/organization-01/invites
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "email": "new-member@example.com",
+  "role": "ADMIN"
+}
