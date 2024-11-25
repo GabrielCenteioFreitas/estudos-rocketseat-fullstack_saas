@@ -219,3 +219,9 @@ Authorization: Bearer {{authToken}}
 # @name revoke_invite
 POST {{baseUrl}}/invites/caa4dc21-78ba-4e6d-babf-f905c98af96b/reject
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name get_pending_invites
+GET {{baseUrl}}/pending-invites
+Authorization: Bearer {{authToken}}
