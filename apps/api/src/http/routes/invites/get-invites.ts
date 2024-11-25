@@ -8,6 +8,7 @@ import { prisma } from '@/lib/prisma'
 import { getUserPermissions } from '@/utils/get-user-permissions'
 
 import { UnauthorizedError } from '../_errors/unauthorized-error'
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function getInvites(app: FastifyInstance) {
   app
@@ -47,19 +48,13 @@ export async function getInvites(app: FastifyInstance) {
         const userId = await req.getCurrentUserId()
 
         const user = await prisma.user.findUnique({
-          select: {
-            id: true,
-            name: true,
-            email: true,
-            avatarUrl: true,
-          },
           where: {
             id: userId,
           },
         })
 
         if (!user) {
-          throw new Error('User not found.')
+          throw new BadRequestError('User not found.')
         }
 
         const { slug } = req.params

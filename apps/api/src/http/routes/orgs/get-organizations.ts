@@ -5,6 +5,7 @@ import { z } from 'zod'
 
 import { auth } from '@/http/middlewares/auth'
 import { prisma } from '@/lib/prisma'
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function getOrganizations(app: FastifyInstance) {
   app
@@ -36,19 +37,13 @@ export async function getOrganizations(app: FastifyInstance) {
         const userId = await req.getCurrentUserId()
 
         const user = await prisma.user.findUnique({
-          select: {
-            id: true,
-            name: true,
-            email: true,
-            avatarUrl: true,
-          },
           where: {
             id: userId,
           },
         })
 
         if (!user) {
-          throw new Error('User not found.')
+          throw new BadRequestError('User not found.')
         }
 
         const organizations = await prisma.organization.findMany({

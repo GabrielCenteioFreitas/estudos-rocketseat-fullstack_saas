@@ -36,19 +36,13 @@ export async function transferOrganization(app: FastifyInstance) {
         const userId = await req.getCurrentUserId()
 
         const user = await prisma.user.findUnique({
-          select: {
-            id: true,
-            name: true,
-            email: true,
-            avatarUrl: true,
-          },
           where: {
             id: userId,
           },
         })
 
         if (!user) {
-          throw new Error('User not found.')
+          throw new BadRequestError('User not found.')
         }
 
         const { transferToUserId } = req.body
