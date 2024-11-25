@@ -195,4 +195,9 @@ Authorization: Bearer {{authToken}}
 
 # @name get_invite
 GET {{baseUrl}}/invites/b57ab849-2bbb-4a26-8337-d6e86fee304b
+
+###
+
+# @name get_invites
+GET {{baseUrl}}/organizations/organization-01/invites
 Authorization: Bearer {{authToken}}
