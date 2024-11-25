@@ -113,3 +113,15 @@ Authorization: Bearer {{authToken}}
 {
   "transferToUserId": "user-id"
 }
+
+###
+
+# @name create_project
+POST {{baseUrl}}/organizations/organization-01/projects
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Project 01",
+  "description": "Project 01 Description"  
+}
