@@ -5,6 +5,7 @@ import { z } from 'zod'
 
 import { auth } from '@/http/middlewares/auth'
 import { prisma } from '@/lib/prisma'
+
 import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function getMembership(app: FastifyInstance) {
@@ -25,8 +26,9 @@ export async function getMembership(app: FastifyInstance) {
             200: z.object({
               membership: z.object({
                 id: z.string().uuid(),
-                organizationId: z.string().uuid(),
                 role: roleSchema,
+                userId: z.string().uuid(),
+                organizationId: z.string().uuid(),
               }),
             }),
           },
@@ -52,8 +54,9 @@ export async function getMembership(app: FastifyInstance) {
         return res.status(200).send({
           membership: {
             id: membership.id,
-            organizationId: membership.organizationId,
             role: membership.role,
+            userId: membership.userId,
+            organizationId: membership.organizationId,
           },
         })
       },
