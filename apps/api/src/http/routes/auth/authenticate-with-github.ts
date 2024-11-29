@@ -28,7 +28,7 @@ export async function authenticateWithGithub(app: FastifyInstance) {
       const { code } = req.body
 
       const githubOAuthURL = new URL(
-        'htts://github.com/login/oauth/access_token',
+        'https://github.com/login/oauth/access_token',
       )
 
       githubOAuthURL.searchParams.set('client_id', env.GITHUB_OAUTH_CLIENT_ID)
@@ -61,7 +61,7 @@ export async function authenticateWithGithub(app: FastifyInstance) {
 
       const githubUserResponse = await fetch('https://api.github.com/user', {
         headers: {
-          Authorization: `Beraer ${githubAccessToken}`,
+          Authorization: `Bearer ${githubAccessToken}`,
         },
       })
 
