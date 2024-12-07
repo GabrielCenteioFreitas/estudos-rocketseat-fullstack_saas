@@ -1,11 +1,10 @@
-import { Header } from '@/components/header'
+import Container from './container'
 
 const Home = async () => {
   return (
-    <div className="py-4">
-      <Header />
-      <main></main>
-    </div>
+    <Container>
+      <p className="text-sm text-muted-foreground">Select an organization.</p>
+    </Container>
   )
 }
 
