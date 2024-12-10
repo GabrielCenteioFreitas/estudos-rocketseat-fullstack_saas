@@ -3,7 +3,7 @@ import { Header } from '@/components/header'
 export default async function Container({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children?: React.ReactNode
 }>) {
   return (
     <div className="space-y-4 py-4">
