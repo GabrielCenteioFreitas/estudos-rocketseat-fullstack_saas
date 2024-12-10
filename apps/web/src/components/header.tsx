@@ -4,14 +4,13 @@ import Image from 'next/image'
 import rocketseatIcon from '@/assets/rocketseat-icon.svg'
 import { ability } from '@/auth/auth'
 
-import { ProjectSwitcher } from './project-switcher'
 import { Separator } from './ui/separator'
 
 export const Header = async () => {
   const permissions = await ability()
 
   return (
-    <div className="mx-auto flex max-w-[1200px] items-center justify-between border-b pb-2">
+    <div className="mx-auto flex max-w-[1200px] items-center justify-between">
       <div className="flex items-center gap-3">
         <Image
           src={rocketseatIcon}
@@ -27,7 +26,8 @@ export const Header = async () => {
         {permissions?.can('get', 'Project') && (
           <>
             <Slash className="size-3 -rotate-[24deg] text-border" />
-            <ProjectSwitcher />
+            {/* The DropdownMenu is causing an error, so for now, this component will remain commented out */}
+            {/* <ProjectSwitcher /> */}
           </>
         )}
       </div>
