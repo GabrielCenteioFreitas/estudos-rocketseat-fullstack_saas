@@ -19,7 +19,7 @@ export const OrganizationForm = () => {
       {!success && message && (
         <Alert variant="destructive">
           <AlertTriangle className="size-4" />
-          <AlertTitle>Sign in failed!</AlertTitle>
+          <AlertTitle>Save organization failed!</AlertTitle>
           <AlertDescription>
             <p>{message}</p>
           </AlertDescription>
@@ -29,7 +29,7 @@ export const OrganizationForm = () => {
       {success && message && (
         <Alert variant="success">
           <AlertTriangle className="size-4" />
-          <AlertTitle>Sign in failed!</AlertTitle>
+          <AlertTitle>Success!</AlertTitle>
           <AlertDescription>
             <p>{message}</p>
           </AlertDescription>
