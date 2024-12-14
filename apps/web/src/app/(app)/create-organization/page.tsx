@@ -1,5 +1,5 @@
 import Container from '../container'
-import { OrganizationForm } from './organization-form'
+import { OrganizationForm } from '../org/organization-form'
 
 const CreateOrganizationPage = () => {
   return (
