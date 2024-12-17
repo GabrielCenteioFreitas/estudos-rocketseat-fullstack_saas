@@ -4,6 +4,7 @@ import Image from 'next/image'
 import rocketseatIcon from '@/assets/rocketseat-icon.svg'
 import { ability } from '@/auth/auth'
 
+import { PendingInvites } from './pending-invites'
 import { Separator } from './ui/separator'
 
 export const Header = async () => {
@@ -33,6 +34,8 @@ export const Header = async () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <PendingInvites />
+
         {/* The DropdownMenu is causing an error, so for now, this component will remain commented out */}
         {/* <ThemeSwitcher /> */}
 
