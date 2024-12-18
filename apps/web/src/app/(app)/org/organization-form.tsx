@@ -1,3 +1,5 @@
+'use client'
+
 import { AlertTriangle, Loader2 } from 'lucide-react'
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
