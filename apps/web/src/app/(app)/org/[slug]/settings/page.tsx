@@ -13,7 +13,7 @@ import { OrganizationForm } from '../../organization-form'
 import { Billing } from './billing'
 import { ShutdownOrganizationButton } from './shutdown-organization-button'
 
-export const ProjectPage = async () => {
+export default async function ProjectPage() {
   const currentOrg = await getCurrentOrg()
   const permissions = await ability()
 

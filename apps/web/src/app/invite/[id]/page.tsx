@@ -15,13 +15,13 @@ import { getInvite } from '@/http/get-invite'
 dayjs.extend(relativeTime)
 
 interface InvitePageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export default async function InvitePage({ params }: InvitePageProps) {
-  const { id: inviteId } = params
+  const { id: inviteId } = await params
   const { invite } = await getInvite({ inviteId })
 
   const isUserAuthenticated = await isAuthenticated()
@@ -38,8 +38,8 @@ export default async function InvitePage({ params }: InvitePageProps) {
   async function signInFromInviteAction() {
     'use server'
 
-    const nextCookeis = await cookies()
-    nextCookeis.set('inviteId', inviteId)
+    const nextCookies = await cookies()
+    nextCookies.set('inviteId', inviteId)
 
     redirect(`/auth/sign-in?email=${invite.email}`)
   }
