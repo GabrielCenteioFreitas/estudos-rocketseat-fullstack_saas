@@ -8,11 +8,11 @@ const CreateOrganizationPage = () => {
     <Sheet defaultOpen>
       <InterceptedSheetContent>
         <SheetTitle>Create organization</SheetTitle>
-      </InterceptedSheetContent>
 
-      <div className="py-4">
-        <OrganizationForm />
-      </div>
+        <div className="py-4">
+          <OrganizationForm />
+        </div>
+      </InterceptedSheetContent>
     </Sheet>
   )
 }
