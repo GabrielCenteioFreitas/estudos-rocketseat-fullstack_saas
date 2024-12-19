@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm env:load next dev --turbopack",
+    "dev": "pnpm env:load next dev",
     "build": "pnpm env:load next build",
     "start": "next start",
     "lint": "next lint",
